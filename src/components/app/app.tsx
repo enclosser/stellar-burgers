@@ -1,9 +1,8 @@
-import { ConstructorPage } from '@pages';
+import { ConstructorPage, Feed, NotFound404 } from '@pages';
 
 import '../../index.css';
 import styles from './app.module.css';
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { AppHeader } from '@components';
 
