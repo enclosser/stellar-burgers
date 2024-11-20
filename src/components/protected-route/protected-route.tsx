@@ -8,10 +8,8 @@ export const ProtectedRoute = ({
   children,
   GuestRoute = false
 }: ProtectedRouteProps) => {
-  const { isAuthChecked, user } = useSelector((state) => ({
-    isAuthChecked: getUserIsAuth(state),
-    user: getUser(state)
-  }));
+  const isAuthChecked = useSelector(getUserIsAuth);
+  const user = useSelector(getUser);
   const location = useLocation();
 
   if (!isAuthChecked) return <Preloader />;

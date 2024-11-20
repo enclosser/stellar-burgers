@@ -24,18 +24,23 @@ import { useDispatch } from '../../services/store';
 import { getIngredientsThunk } from '../../services/slices/burger-ingredients';
 import { checkUserAuthThunk } from '../../services/slices/user';
 
+import { useMatch } from 'react-router-dom';
+
 const App = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const backgroundLocation = location.state?.background;
   const dispatch = useDispatch();
 
+  const feedOrderMatch = useMatch('/feed/:number');
+  const profileOrderMatch = useMatch('/profile/orders/:number');
+
   useEffect(() => {
     dispatch(getIngredientsThunk());
     dispatch(checkUserAuthThunk());
   }, [dispatch]);
 
-  const closeModal = useCallback(() => navigate(-1), [navigate]);
+  const closeModal = () => navigate(-1);
 
   return (
     <div className={styles.app}>
@@ -45,7 +50,14 @@ const App = () => {
         <Route path='/' element={<ConstructorPage />} />
         <Route path='/feed' element={<Feed />} />
         <Route path='/feed/:number' element={<OrderInfo />} />
-        <Route path='/login' element={<Login />} />
+        <Route
+          path='/login'
+          element={
+            <ProtectedRoute GuestRoute>
+              <Login />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path='/register'
           element={
@@ -108,7 +120,10 @@ const App = () => {
           <Route
             path='/feed/:number'
             element={
-              <Modal title='' onClose={closeModal}>
+              <Modal
+                title={`Заказ #${feedOrderMatch?.params.number || ''}`}
+                onClose={closeModal}
+              >
                 <OrderInfo />
               </Modal>
             }
@@ -125,7 +140,10 @@ const App = () => {
             path='/profile/orders/:number'
             element={
               <ProtectedRoute>
-                <Modal title='' onClose={closeModal}>
+                <Modal
+                  title={`Заказ #${profileOrderMatch?.params.number || ''}`}
+                  onClose={closeModal}
+                >
                   <OrderInfo />
                 </Modal>
               </ProtectedRoute>
