@@ -93,7 +93,7 @@ describe('Тестирование конструктора бургера', () 
         cy.get('[data-cy=modal]').should('be.visible');
         cy.contains('11').should('exist');
 
-        // Проверка закрытия модального окна и отсутствия номера заказа
+        // Проверка закрытия модального окна и отсутствия номера заказа и цены
         cy.get('[data-cy=close-button]').click();
         cy.get('[data-cy=modal]').should('not.exist');
         cy.contains('11').should('not.exist');
@@ -103,6 +103,44 @@ describe('Тестирование конструктора бургера', () 
         ['Выберите булки', 'Выберите начинку'].forEach((text) => {
           cy.contains(text).should('exist');
         });
+      });
+    });
+
+    describe('Тестирование работы с modal', () => {
+      beforeEach(() => {
+        cy.get('[data-cy=ingredients-category]')
+          .find('li')
+          .first()
+          .as('ingredient');
+      });
+
+      // Функция для открытия модального окна
+      const openModal = () => {
+        cy.get('@ingredient').click();
+        cy.get('[data-cy=modal]').should('be.visible');
+      };
+
+      // Функция для закрытия модального окна
+      const closeModal = () => {
+        cy.get('[data-cy=close-button]').click();
+        cy.get('[data-cy=modal]').should('not.exist');
+      };
+
+      it('Открытие modal', () => {
+        cy.get('[data-cy=modal]').should('not.exist');
+        openModal();
+        cy.contains('Детали ингредиента').should('exist');
+      });
+
+      it('Закрытие modal по кнопке', () => {
+        openModal();
+        closeModal();
+      });
+
+      it('Закрытие modal по клику вне', () => {
+        openModal();
+        cy.get('[data-cy=overlay]').click({ force: true });
+        cy.get('[data-cy=modal]').should('not.exist');
       });
     });
   });
