@@ -10,7 +10,7 @@ type TFeeds = {
   totalToday: number;
 };
 
-const initialState: TFeeds = {
+export const initialState: TFeeds = {
   orders: [],
   total: 0,
   totalToday: 0
