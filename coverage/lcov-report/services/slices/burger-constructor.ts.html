@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.28% </span>
+                <span class="strong">98.57% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>45/70</span>
+                <span class='fraction'>69/70</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.28% </span>
+                <span class="strong">98.57% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>45/70</span>
+                <span class='fraction'>69/70</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -152,40 +152,40 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -221,41 +221,41 @@ const burgerConstructor = createSlice({
   initialState,
   reducers: {
     addConstructorItem: {
-      reducer: <span class="fstat-no" title="function not covered" >(state, action: PayloadAction&lt;TConstructorIngredient&gt;) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (action.payload.type === 'bun') {</span>
-<span class="cstat-no" title="statement not covered" >          state.bun = action.payload;</span>
-<span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >          state.ingredients.push(action.payload);</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+      reducer: (state, action: PayloadAction&lt;TConstructorIngredient&gt;) =&gt; {
+        if (action.payload.type === 'bun') {
+          state.bun = action.payload;
+        } else {
+          state.ingredients.push(action.payload);
+        }
       },
-      prepare: <span class="fstat-no" title="function not covered" >(ingredient: TIngredient) =&gt; ({</span>
+      prepare: (ingredient: TIngredient) =&gt; ({
         payload: { ...ingredient, id: nanoid() }
       })
     },
-    removeConstructorItem: <span class="fstat-no" title="function not covered" >(state, action: PayloadAction&lt;string&gt;) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      state.ingredients = state.ingredients.filter(</span>
-<span class="cstat-no" title="statement not covered" >        (ingredient) =&gt; ingredient.id !== action.payload</span>
-<span class="cstat-no" title="statement not covered" >      );</span>
+    removeConstructorItem: (state, action: PayloadAction&lt;string&gt;) =&gt; {
+      state.ingredients = state.ingredients.filter(
+        (ingredient) =&gt; ingredient.id !== action.payload
+      );
     },
-    moveConstructorItem: <span class="fstat-no" title="function not covered" >(</span>
-<span class="cstat-no" title="statement not covered" >      state,</span>
-<span class="cstat-no" title="statement not covered" >      {</span>
-<span class="cstat-no" title="statement not covered" >        payload: { index, move }</span>
-<span class="cstat-no" title="statement not covered" >      }: PayloadAction&lt;{ index: number; move: 'up' | 'down' }&gt;</span>
-<span class="cstat-no" title="statement not covered" >    ) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      const swap = (i: number, j: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        [state.ingredients[i], state.ingredients[j]] = [</span>
-<span class="cstat-no" title="statement not covered" >          state.ingredients[j],</span>
-<span class="cstat-no" title="statement not covered" >          state.ingredients[i]</span>
-<span class="cstat-no" title="statement not covered" >        ];</span>
-<span class="cstat-no" title="statement not covered" >      };</span>
-<span class="cstat-no" title="statement not covered" >      if (move === 'up' &amp;&amp; index &gt; 0) swap(index, index - 1);</span>
-<span class="cstat-no" title="statement not covered" >      if (move === 'down' &amp;&amp; index &lt; state.ingredients.length - 1)</span>
-<span class="cstat-no" title="statement not covered" >        swap(index, index + 1);</span>
+    moveConstructorItem: (
+      state,
+      {
+        payload: { index, move }
+      }: PayloadAction&lt;{ index: number; move: 'up' | 'down' }&gt;
+    ) =&gt; {
+      const swap = (i: number, j: number) =&gt; {
+        [state.ingredients[i], state.ingredients[j]] = [
+          state.ingredients[j],
+          state.ingredients[i]
+        ];
+      };
+      if (move === 'up' &amp;&amp; index &gt; 0) swap(index, index - 1);
+      if (move === 'down' &amp;&amp; index &lt; state.ingredients.length - 1)
+        swap(index, index + 1);
     },
-    clearConstructor: <span class="fstat-no" title="function not covered" >(state) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      Object.assign(state, initialState);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    clearConstructor: (state) =&gt; {
+      Object.assign(state, initialState);
+    }
   }
 });
 &nbsp;
@@ -280,7 +280,7 @@ export const getConstructorState = <span class="fstat-no" title="function not co
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-13T16:52:48.654Z
+                at 2024-12-13T18:29:47.613Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
