@@ -7,7 +7,7 @@ import {
   updateUserApi,
   logoutApi,
   getUserApi
-} from '@api';
+} from '../../utils/burger-api';
 import { TUser } from '@utils-types';
 
 export const registerUserThunk = createAsyncThunk(
