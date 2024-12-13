@@ -68,7 +68,7 @@ const mockIngredients: Record<'bun' | 'main' | 'sauce', TIngredient> = {
   }
 };
 
-describe('Burger Constructor Reducer', () => {
+describe('Проверка слайса конструктора бургера', () => {
   it('Добавление булки', () => {
     const newState = constructorReducer(
       initialState,
@@ -111,18 +111,25 @@ describe('Burger Constructor Reducer', () => {
       ...initialState,
       ingredients: [mockIngredients.sauce, mockIngredients.main]
     };
-    const stateAfterMoveDown = constructorReducer(
+    const newState = constructorReducer(
+      preloadedState,
+      moveConstructorItem({ index: 1, move: 'up' })
+    );
+    expect(newState.ingredients[0]).toEqual(mockIngredients.main); // Проверяем порядок
+    expect(newState.ingredients[1]).toEqual(mockIngredients.sauce);
+  });
+
+  it('Изменение порядка ингредиентов вниз', () => {
+    const preloadedState = {
+      ...initialState,
+      ingredients: [mockIngredients.sauce, mockIngredients.main]
+    };
+    const newState = constructorReducer(
       preloadedState,
       moveConstructorItem({ index: 0, move: 'down' })
     );
-    expect(stateAfterMoveDown.ingredients[0]).toEqual(mockIngredients.main);
-    expect(stateAfterMoveDown.ingredients[1]).toEqual(mockIngredients.sauce);
-    const stateAfterMoveUp = constructorReducer(
-      stateAfterMoveDown,
-      moveConstructorItem({ index: 1, move: 'up' })
-    );
-    expect(stateAfterMoveUp.ingredients[0]).toEqual(mockIngredients.main);
-    expect(stateAfterMoveUp.ingredients[1]).toEqual(mockIngredients.sauce);
+    expect(newState.ingredients[0]).toEqual(mockIngredients.main); // Проверяем порядок
+    expect(newState.ingredients[1]).toEqual(mockIngredients.sauce);
   });
 
   it('Очистка конструктора', () => {

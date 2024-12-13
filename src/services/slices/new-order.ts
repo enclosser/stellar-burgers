@@ -10,7 +10,7 @@ type TNewOrderState = {
   orderRequest: boolean;
 };
 
-const initialState: TNewOrderState = {
+export const initialState: TNewOrderState = {
   order: null,
   name: '',
   orderRequest: false

@@ -91,7 +91,7 @@ describe('Тестирование конструктора бургера', () 
 
         // Проверка отображения модального окна и номера заказа
         cy.get('[data-cy=modal]').should('be.visible');
-        cy.contains('11').should('exist');
+        cy.contains('62729').should('exist');
 
         // Проверка закрытия модального окна и отсутствия номера заказа и цены
         cy.get('[data-cy=close-button]').click();
