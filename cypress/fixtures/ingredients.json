@@ -1,0 +1,4 @@
+[
+  { "id": "1", "name": "Краторная булка N-200i", "type": "bun", "price": 125 },
+  { "id": "2", "name": "Мясо бессмертных моллюсков Protostomia", "type": "main", "price": 750 }
+]
