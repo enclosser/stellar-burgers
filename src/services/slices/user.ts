@@ -7,7 +7,7 @@ import {
   updateUserApi,
   logoutApi,
   getUserApi
-} from '@api';
+} from '../../utils/burger-api';
 import { TUser } from '@utils-types';
 
 export const registerUserThunk = createAsyncThunk(
@@ -70,7 +70,7 @@ type TUserState = {
   error: string | null;
 };
 
-const initialState: TUserState = {
+export const initialState: TUserState = {
   isAuthChecked: false,
   user: null,
   error: null
