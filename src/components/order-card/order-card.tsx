@@ -3,41 +3,38 @@ import { useLocation } from 'react-router-dom';
 
 import { OrderCardProps } from './type';
 import { TIngredient } from '@utils-types';
-import { OrderCardUI } from '@ui';
+import { OrderCardUI } from '../ui/order-card';
 
-import { useSelector } from '../../services/store';
-import { getIngredients } from '../../services/slices/burger-ingredients';
-
-const maxIngredients = 4;
+const maxIngredients = 6;
 
 export const OrderCard: FC<OrderCardProps> = memo(({ order }) => {
   const location = useLocation();
-  const ingredients = useSelector(getIngredients).ingredients;
+
+  /** TODO: взять переменную из стора */
+  const ingredients: TIngredient[] = [];
 
   const orderInfo = useMemo(() => {
     if (!ingredients.length) return null;
 
-    const ingredientMap = ingredients.reduce(
-      (map, ingredient) => {
-        map[ingredient._id] = ingredient;
-        return map;
+    const ingredientsInfo = order.ingredients.reduce(
+      (acc: TIngredient[], item: string) => {
+        const ingredient = ingredients.find((ing) => ing._id === item);
+        if (ingredient) return [...acc, ingredient];
+        return acc;
       },
-      {} as Record<string, TIngredient>
+      []
     );
 
-    const ingredientsInfo = order.ingredients
-      .map((ingredientId) => ingredientMap[ingredientId])
-      .filter(Boolean);
-
     const total = ingredientsInfo.reduce((acc, item) => acc + item.price, 0);
+
     const ingredientsToShow = ingredientsInfo.slice(0, maxIngredients);
+
     const remains =
       ingredientsInfo.length > maxIngredients
         ? ingredientsInfo.length - maxIngredients
         : 0;
 
     const date = new Date(order.createdAt);
-
     return {
       ...order,
       ingredientsInfo,
